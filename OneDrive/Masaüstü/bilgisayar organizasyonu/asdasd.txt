@@ -1,0 +1,15 @@
+.data
+
+dizi: .word 6
+a: .word 5
+
+
+.text
+.globl main
+
+main: 
+
+
+li $v0, 10
+syscall
+.end main

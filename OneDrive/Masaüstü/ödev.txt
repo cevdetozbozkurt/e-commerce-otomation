@@ -1,0 +1,2 @@
+dizinin bütün elemanları 1 ise evet değil ise hayır yazdır
+dizi

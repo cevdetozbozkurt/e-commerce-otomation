@@ -1,0 +1,31 @@
+.data
+
+n: .word 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+top: .word 0
+
+
+.text
+.globl main
+
+main: 
+
+addi $t0, $zero,10   	#indisin son değeri
+addi $t1, $zero,0    	#i nin başlangıç değeri
+lui $t2,4097         	#t2 de başlangıç adresi var
+lw $s1, 40($t2)      	#top'un başlangıç değeri $s1'e getirildi
+loop:sll $t3, $t1, 2 	#i iki sola kaydırıldı $t3 ün içeriği 0
+add $t4, $t2, $t3    	#i=0 indisteki datayı $s0'a getir
+lw $s0, 0($t4)       	#    
+add $s1, $s1, $s0    	#top = top + $s0 => top = 34 olur yani $s1 <= 34 oldu      
+addi $t1, $t1, 1     	#döngü değişkeni güncellendi
+bne $t1, $t0, loop   	#döngü devam edecek mi     
+sw $s1, 40($t2)
+
+add $a0, $s1,$zero
+li $v0, 1
+syscall
+
+
+li $v0, 10
+syscall
+.end main

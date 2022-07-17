@@ -1,0 +1,44 @@
+ori
+lui
+bne
+beq
+lw = load word
+sw = store word
+lb = load byte
+lbu = load byte unsigned
+sb
+lh = load half
+lhu
+sh
+slt
+sltu
+jr
+jal
+j = jump
+sll
+addi
+addiu
+add
+addu
+sub
+subu
+mult = multipy
+multu
+div
+divu
+$s0
+$v0
+$ra
+$t0
+$a0
+   ---------------------------------------------
+I  op code |  rs   |  rt    |   16 bit address |
+   ---------------------------------------------
+
+-------------------------------------------------
+op code | rs    |   rt  |       |       |       |
+-------------------------------------------------
+ 6 bit  | 5 bit | 5 bit | 5 bit | 5 bit | 6 bit |
+-------------------------------------------------
+
+
