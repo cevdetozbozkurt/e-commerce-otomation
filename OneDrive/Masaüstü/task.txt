@@ -1,3 +1,0 @@
-bir tane karakter yap,
-controller ekle
-çarşamba son
