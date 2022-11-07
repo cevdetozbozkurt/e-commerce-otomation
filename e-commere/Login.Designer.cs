@@ -105,6 +105,7 @@
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.eMailLabel);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giriş";
             this.ResumeLayout(false);
             this.PerformLayout();

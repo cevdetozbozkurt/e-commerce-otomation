@@ -62,6 +62,7 @@
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.loginButton);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "E-Ticaret";
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);

@@ -10,32 +10,26 @@ using System.Windows.Forms;
 
 namespace e_commere
 {
-    public partial class Main : Form
+    public partial class Register : Form
     {
-        public Main()
+        public Register()
         {
             InitializeComponent();
         }
 
-        private void Main_Load(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            this.Hide();
-            login.ShowDialog();
-            this.Show();
+
         }
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            Register register = new Register();
-            this.Hide();
-            register.ShowDialog();
-            this.Show();
+            this.Close();
         }
     }
 }
