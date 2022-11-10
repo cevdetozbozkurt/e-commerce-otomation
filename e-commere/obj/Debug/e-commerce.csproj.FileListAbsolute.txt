@@ -11,3 +11,4 @@ C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e-commere.exe
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e-commere.pdb
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.Register.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.DataView.resources

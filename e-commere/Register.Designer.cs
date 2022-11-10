@@ -161,6 +161,7 @@
             this.passwordText.Name = "passwordText";
             this.passwordText.Size = new System.Drawing.Size(206, 26);
             this.passwordText.TabIndex = 11;
+            this.passwordText.UseSystemPasswordChar = true;
             // 
             // passwordCheckText
             // 
@@ -170,6 +171,7 @@
             this.passwordCheckText.Name = "passwordCheckText";
             this.passwordCheckText.Size = new System.Drawing.Size(206, 26);
             this.passwordCheckText.TabIndex = 12;
+            this.passwordCheckText.UseSystemPasswordChar = true;
             // 
             // addressText
             // 
@@ -215,6 +217,7 @@
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.Register_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
