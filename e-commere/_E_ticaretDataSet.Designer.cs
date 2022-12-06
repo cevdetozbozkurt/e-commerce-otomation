@@ -42,6 +42,10 @@ namespace e_commere {
         
         private UyeAdresDataTable tableUyeAdres;
         
+        private global::System.Data.DataRelation relationFK_AltKategori_Kategori;
+        
+        private global::System.Data.DataRelation relationFK_Siparis_Uye;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -386,6 +390,8 @@ namespace e_commere {
                     this.tableUyeAdres.InitVars();
                 }
             }
+            this.relationFK_AltKategori_Kategori = this.Relations["FK_AltKategori_Kategori"];
+            this.relationFK_Siparis_Uye = this.Relations["FK_Siparis_Uye"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -414,6 +420,29 @@ namespace e_commere {
             base.Tables.Add(this.tableUye);
             this.tableUyeAdres = new UyeAdresDataTable();
             base.Tables.Add(this.tableUyeAdres);
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_AltKategori_Kategori", new global::System.Data.DataColumn[] {
+                        this.tableKategori.KategoriIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAltKategori.KategoriIdColumn});
+            this.tableAltKategori.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Siparis_Uye", new global::System.Data.DataColumn[] {
+                        this.tableSiparis.UyeIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUye.UyeIdColumn});
+            this.tableUye.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            this.relationFK_AltKategori_Kategori = new global::System.Data.DataRelation("FK_AltKategori_Kategori", new global::System.Data.DataColumn[] {
+                        this.tableKategori.KategoriIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAltKategori.KategoriIdColumn}, false);
+            this.Relations.Add(this.relationFK_AltKategori_Kategori);
+            this.relationFK_Siparis_Uye = new global::System.Data.DataRelation("FK_Siparis_Uye", new global::System.Data.DataColumn[] {
+                        this.tableSiparis.UyeIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableUye.UyeIdColumn}, false);
+            this.Relations.Add(this.relationFK_Siparis_Uye);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -679,14 +708,17 @@ namespace e_commere {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AltKategoriRow AddAltKategoriRow(int KategoriId, string AltKategoriAdi, System.DateTime AltKategoriTarih, bool AltKategoriDurum) {
+            public AltKategoriRow AddAltKategoriRow(KategoriRow parentKategoriRowByFK_AltKategori_Kategori, string AltKategoriAdi, System.DateTime AltKategoriTarih, bool AltKategoriDurum) {
                 AltKategoriRow rowAltKategoriRow = ((AltKategoriRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        KategoriId,
+                        null,
                         AltKategoriAdi,
                         AltKategoriTarih,
                         AltKategoriDurum};
+                if ((parentKategoriRowByFK_AltKategori_Kategori != null)) {
+                    columnValuesArray[1] = parentKategoriRowByFK_AltKategori_Kategori[0];
+                }
                 rowAltKategoriRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAltKategoriRow);
                 return rowAltKategoriRow;
@@ -1393,6 +1425,8 @@ namespace e_commere {
                 base.Columns.Add(this.columnSiparisTarih);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSiparisId}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columnUyeId}, false));
                 this.columnSiparisId.AutoIncrement = true;
                 this.columnSiparisId.AutoIncrementSeed = -1;
                 this.columnSiparisId.AutoIncrementStep = -1;
@@ -1400,6 +1434,7 @@ namespace e_commere {
                 this.columnSiparisId.ReadOnly = true;
                 this.columnSiparisId.Unique = true;
                 this.columnUyeId.AllowDBNull = false;
+                this.columnUyeId.Unique = true;
                 this.columnAdresId.AllowDBNull = false;
                 this.columnSiparisBilgileri.AllowDBNull = false;
                 this.columnSiparisBilgileri.MaxLength = 2147483647;
@@ -3715,6 +3750,17 @@ namespace e_commere {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public KategoriRow KategoriRow {
+                get {
+                    return ((KategoriRow)(this.GetParentRow(this.Table.ParentRelations["FK_AltKategori_Kategori"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_AltKategori_Kategori"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsAltKategoriTarihNull() {
                 return this.IsNull(this.tableAltKategori.AltKategoriTarihColumn);
             }
@@ -3829,6 +3875,17 @@ namespace e_commere {
             public void SetKategoriDurumNull() {
                 this[this.tableKategori.KategoriDurumColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AltKategoriRow[] GetAltKategoriRows() {
+                if ((this.Table.ChildRelations["FK_AltKategori_Kategori"] == null)) {
+                    return new AltKategoriRow[0];
+                }
+                else {
+                    return ((AltKategoriRow[])(base.GetChildRows(this.Table.ChildRelations["FK_AltKategori_Kategori"])));
+                }
+            }
         }
         
         /// <summary>
@@ -3937,6 +3994,17 @@ namespace e_commere {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetSiparisDurumNull() {
                 this[this.tableSiparis.SiparisDurumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public UyeRow[] GetUyeRows() {
+                if ((this.Table.ChildRelations["FK_Siparis_Uye"] == null)) {
+                    return new UyeRow[0];
+                }
+                else {
+                    return ((UyeRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Siparis_Uye"])));
+                }
             }
         }
         
@@ -4525,6 +4593,17 @@ namespace e_commere {
                 }
                 set {
                     this[this.tableUye.UyeDurumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public SiparisRow SiparisRow {
+                get {
+                    return ((SiparisRow)(this.GetParentRow(this.Table.ParentRelations["FK_Siparis_Uye"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Siparis_Uye"]);
                 }
             }
             
@@ -9095,15 +9174,6 @@ SELECT AdresId, UyeId, AdresMetni, AdresIlce, AdresSehir, AdresPK, AdresUlke, Ad
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(_E_ticaretDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._altKategoriTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AltKategori.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._altKategoriTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._kategoriTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Kategori.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -9119,6 +9189,15 @@ SELECT AdresId, UyeId, AdresMetni, AdresIlce, AdresSehir, AdresPK, AdresUlke, Ad
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._siparisTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._altKategoriTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AltKategori.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._altKategoriTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -9186,14 +9265,6 @@ SELECT AdresId, UyeId, AdresMetni, AdresIlce, AdresSehir, AdresPK, AdresUlke, Ad
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(_E_ticaretDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._altKategoriTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AltKategori.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._altKategoriTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._kategoriTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Kategori.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -9207,6 +9278,14 @@ SELECT AdresId, UyeId, AdresMetni, AdresIlce, AdresSehir, AdresPK, AdresUlke, Ad
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._siparisTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._altKategoriTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AltKategori.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._altKategoriTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -9316,6 +9395,14 @@ SELECT AdresId, UyeId, AdresMetni, AdresIlce, AdresSehir, AdresPK, AdresUlke, Ad
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._altKategoriTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AltKategori.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._altKategoriTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._siparisTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Siparis.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -9329,14 +9416,6 @@ SELECT AdresId, UyeId, AdresMetni, AdresIlce, AdresSehir, AdresPK, AdresUlke, Ad
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._kategoriTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._altKategoriTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AltKategori.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._altKategoriTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +35,14 @@ namespace e_commere
 
         private void registerButton_Click(object sender, EventArgs e)
         {
+            connection.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connection;
+            cmd.CommandText = "select uyeemail from uye";
+            bool isAlreadyThere = false;
+            ArrayList uyeemail = new ArrayList();
+            SqlDataReader reader = cmd.ExecuteReader();
+
             try
             {
                 int hata = 0;
@@ -46,6 +55,18 @@ namespace e_commere
                 {
                     hata = 2;
                 }
+                while (reader.Read())
+                {
+                    uyeemail.Add(reader["uyeemail"]);
+                }
+                foreach (string i in uyeemail)
+                {
+                    if (i.ToString().Equals(mailText.Text)){
+                        hata = 3; 
+                    }
+                }
+                reader.Close();
+
                 if (hata == 1)
                 {
                     MessageBox.Show("Lütfen bütün alanları doldurunuz...", "uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -53,10 +74,13 @@ namespace e_commere
                 else if (hata == 2)
                 {
                     MessageBox.Show("Girdiğiniz Şifreler Aynı olmalı...", "uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }else if(hata == 3)
+                {
+                    MessageBox.Show("Daha önce bu email ile kayıt olunmuş lütfen başka bir mail giriniz...", "uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    connection.Open();
+                    
                     SqlCommand add = new SqlCommand("insert into Uye(UyeAdi,UyeSoyadi,UyeTelefon,UyeEmail,UyeSifre,UyeTarih) values ('" + nameText.Text + "','" + lastNameText.Text + "','" + phoneNumText.Text + "','" + mailText.Text + "','" + passwordText.Text + "','" + DateTime.Now + "')", connection);
                     int basari = add.ExecuteNonQuery();
                     if (basari == 1)
@@ -76,11 +100,13 @@ namespace e_commere
             finally
             {
                 connection.Close();
+                /*
                 DataView dv = new DataView();
                 dv.listele();
                 this.Hide();
                 dv.ShowDialog();
                 this.Show();
+                */
             }
         }
 

@@ -83,6 +83,7 @@
             this.enteringButton.TabIndex = 4;
             this.enteringButton.Text = "Giriş Yap";
             this.enteringButton.UseVisualStyleBackColor = true;
+            this.enteringButton.Click += new System.EventHandler(this.enteringButton_Click);
             // 
             // forgetPassword
             // 
