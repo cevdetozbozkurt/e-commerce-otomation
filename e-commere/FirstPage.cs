@@ -16,5 +16,12 @@ namespace e_commere
         {
             InitializeComponent();
         }
+
+        CategoryProvider provider = new CategoryProvider();
+
+        private void FirstPage_Load(object sender, EventArgs e)
+        {
+            cmbCategories.DataSource = provider.FillCombobox();
+        }
     }
 }

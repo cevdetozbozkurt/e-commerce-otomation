@@ -28,47 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.cmbCategories = new System.Windows.Forms.ComboBox();
+            this.cmbSubCategories = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listBox1
+            // cmbCategories
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Items.AddRange(new object[] {
-            "asd",
-            "asda",
-            "asdas"});
-            this.listBox1.Location = new System.Drawing.Point(12, 50);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 204);
-            this.listBox1.TabIndex = 0;
+            this.cmbCategories.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbCategories.FormattingEnabled = true;
+            this.cmbCategories.Location = new System.Drawing.Point(23, 87);
+            this.cmbCategories.Name = "cmbCategories";
+            this.cmbCategories.Size = new System.Drawing.Size(186, 28);
+            this.cmbCategories.TabIndex = 0;
             // 
-            // treeView1
+            // cmbSubCategories
             // 
-            this.treeView1.Location = new System.Drawing.Point(138, 135);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(147, 119);
-            this.treeView1.TabIndex = 1;
+            this.cmbSubCategories.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbSubCategories.FormattingEnabled = true;
+            this.cmbSubCategories.Location = new System.Drawing.Point(23, 135);
+            this.cmbSubCategories.Name = "cmbSubCategories";
+            this.cmbSubCategories.Size = new System.Drawing.Size(186, 28);
+            this.cmbSubCategories.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Kategoriler";
             // 
             // FirstPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.treeView1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbSubCategories);
+            this.Controls.Add(this.cmbCategories);
             this.Name = "FirstPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.FirstPage_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ComboBox cmbCategories;
+        private System.Windows.Forms.ComboBox cmbSubCategories;
+        private System.Windows.Forms.Label label1;
     }
 }
