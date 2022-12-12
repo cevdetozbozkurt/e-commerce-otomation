@@ -3,12 +3,14 @@ inner join kategori on altkategori.kategoriid = kategori.kategoriid
 
 select * from AltKategori
 
+select * from kategori
 
-insert into AltKategori(AltKategoriAdi,KategoriId) values('Oyun & Oyun Konsolları',1)
+
+insert into AltKategori(AltKategoriAdi,KategoriId) values('',4)
 
 update AltKategori
-set AltKategoriAdi = 'Klima ve Isıtıcılar'
-where AltKategoriId = 7
+set AltKategoriAdi = 'Takı & Mücevher'
+where AltKategoriId = 18
 
 
 CREATE TABLE Orders (

@@ -35,16 +35,15 @@
             // 
             // cmbCategories
             // 
-            this.cmbCategories.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbCategories.FormattingEnabled = true;
             this.cmbCategories.Location = new System.Drawing.Point(23, 87);
             this.cmbCategories.Name = "cmbCategories";
             this.cmbCategories.Size = new System.Drawing.Size(186, 28);
             this.cmbCategories.TabIndex = 0;
+            this.cmbCategories.SelectedIndexChanged += new System.EventHandler(this.cmbCategories_SelectedIndexChanged);
             // 
             // cmbSubCategories
             // 
-            this.cmbSubCategories.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbSubCategories.FormattingEnabled = true;
             this.cmbSubCategories.Location = new System.Drawing.Point(23, 135);
             this.cmbSubCategories.Name = "cmbSubCategories";

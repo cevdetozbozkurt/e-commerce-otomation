@@ -83,6 +83,7 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Main\main.cs" />
+    <Compile Include="SubCategories.cs" />
     <Compile Include="_E_ticaretDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

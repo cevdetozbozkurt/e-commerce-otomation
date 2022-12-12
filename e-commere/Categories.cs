@@ -8,10 +8,10 @@ namespace e_commere
 {
     internal class Categories
     {
-        int CategoryID;
+        string CategoryID;
         string CategoryName;
 
-        public int CategoryID1 { get => CategoryID; set => CategoryID = value; }
+        public string CategoryID1 { get => CategoryID; set => CategoryID = value; }
         public string CategoryName1 { get => CategoryName; set => CategoryName = value; }
     }
 }
