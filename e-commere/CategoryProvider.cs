@@ -55,6 +55,7 @@ namespace e_commere
             dr.Close();
         }
         //selin bir şey ekledi
+        //selin iki şey ekledi
         public List<string> FillCombobox()
         {
             return categories.Select(x => x.CategoryName1).ToList();
