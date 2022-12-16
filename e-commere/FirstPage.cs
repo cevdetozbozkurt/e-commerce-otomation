@@ -27,7 +27,8 @@ namespace e_commere
 
         private void cmbCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbSubCategories.DataSource = provider.FilterCategory(cmbCategories.Text);
+            cmbSubCategories.DataSource = provider.FilterCategory();
+            Debug.WriteLine("wsd");
         }
     }
 }

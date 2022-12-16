@@ -50,7 +50,9 @@ namespace e_commere
                 subCategory.KategoriId = dr[2].ToString();
                 subCategory.AltKategoriName = dr[1].ToString();
                 subCategories.Add(subCategory);
+                Debug.WriteLine(dr[1]);
             }
+            
             con.Close();
             dr.Close();
         }
@@ -66,6 +68,7 @@ namespace e_commere
             {
                 return subCategories.Select(x => x.AltKategoriName).ToList();
             }
+            Debug.WriteLine(subCategories.All());
             return null;
         }
     }
