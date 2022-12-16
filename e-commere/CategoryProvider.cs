@@ -56,7 +56,8 @@ namespace e_commere
             con.Close();
             dr.Close();
         }
-
+        //selin bir şey ekledi
+        //selin iki şey ekledi
         public List<string> FillCombobox()
         {
             return categories.Select(x => x.CategoryName1).ToList();
@@ -68,7 +69,6 @@ namespace e_commere
             {
                 return subCategories.Select(x => x.AltKategoriName).ToList();
             }
-            Debug.WriteLine(subCategories.All());
             return null;
         }
     }
