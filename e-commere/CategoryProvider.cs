@@ -50,7 +50,9 @@ namespace e_commere
                 subCategory.KategoriId = dr[2].ToString();
                 subCategory.AltKategoriName = dr[1].ToString();
                 subCategories.Add(subCategory);
+                Debug.WriteLine(dr[1]);
             }
+            
             con.Close();
             dr.Close();
         }

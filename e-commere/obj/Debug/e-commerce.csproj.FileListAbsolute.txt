@@ -13,3 +13,18 @@ C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.Register.resources
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.DataView.resources
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.FirstPage.resources
+D:\github projects\e-commerce-otomation\e-commere\bin\Debug\e-commere.exe.config
+D:\github projects\e-commerce-otomation\e-commere\bin\Debug\e-commere.exe
+D:\github projects\e-commerce-otomation\e-commere\bin\Debug\e-commere.pdb
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e-commerce.csproj.AssemblyReference.cache
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e-commerce.csproj.SuggestedBindingRedirects.cache
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.DataView.resources
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.FirstPage.resources
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.Login.resources
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.Main.resources
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.Properties.Resources.resources
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.Register.resources
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e-commerce.csproj.GenerateResource.cache
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e-commerce.csproj.CoreCompileInputs.cache
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e-commere.exe
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e-commere.pdb
