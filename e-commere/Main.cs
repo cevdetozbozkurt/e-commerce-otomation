@@ -40,5 +40,32 @@ namespace e_commere
             register.ShowDialog();
             this.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox20_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.ShowDialog();
+            this.Hide();
+        }
     }
 }

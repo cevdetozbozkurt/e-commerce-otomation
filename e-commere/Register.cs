@@ -119,5 +119,21 @@ namespace e_commere
         {
             Application.Exit();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Main main = new Main(); // Ana sayfaya dönme
+            main.ShowDialog();
+        }
     }
 }

@@ -30,5 +30,27 @@ namespace e_commere
             cmbSubCategories.DataSource = provider.FilterCategory("qwe");
             Debug.WriteLine("wsd");
         }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox20_Click(object sender, EventArgs e)
+        {
+            FirstPage fp = new FirstPage(); // Kullanıcıyı sürekli çıkmaktan engellemk
+            fp.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FirstPage fp = new FirstPage();
+            fp.ShowDialog();
+        }
     }
 }
