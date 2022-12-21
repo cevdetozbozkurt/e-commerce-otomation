@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace e_commere
 {
@@ -19,16 +20,30 @@ namespace e_commere
         }
 
         CategoryProvider provider = new CategoryProvider();
-
+        SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
+        SqlDataReader dr;
+        string text;
         private void FirstPage_Load(object sender, EventArgs e)
         {
+            Console.WriteLine(provider.subCategories);
             cmbCategories.DataSource = provider.FillCombobox();
         }
 
         private void cmbCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbSubCategories.DataSource = provider.FilterCategory("qwe");
-            Debug.WriteLine("wsd");
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select Kategori.kategoriid from altkategori inner join Kategori on Kategori.KategoriId = AltKategori.KategoriId where KategoriAdi = '" + cmbCategories.SelectedItem.ToString() + "'";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                text = dr[0].ToString();
+            }
+            Debug.WriteLine(provider.subCategory.KategoriId);
+            cmbSubCategories.DataSource = provider.FilterCategory(text, provider.subCategory.KategoriId);
+            dr.Close();
+            con.Close();
         }
 
         private void pictureBox19_Click(object sender, EventArgs e)
@@ -51,6 +66,11 @@ namespace e_commere
         {
             FirstPage fp = new FirstPage();
             fp.ShowDialog();
+        }
+
+        private void cmbSubCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

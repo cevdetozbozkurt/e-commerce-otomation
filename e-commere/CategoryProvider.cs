@@ -14,6 +14,8 @@ namespace e_commere
 
         public List<Categories> categories { get; set; }
         public List<SubCategories> subCategories { get; set; }
+        public Categories category;
+        public SubCategories subCategory;
 
         public CategoryProvider()
         {
@@ -33,7 +35,7 @@ namespace e_commere
             
             while (dr.Read())
             {
-                Categories category = new Categories();
+                category = new Categories();
                 category.CategoryID1 = dr[1].ToString();
                 category.CategoryName1 = dr[0].ToString();
                 categories.Add(category);
@@ -46,26 +48,23 @@ namespace e_commere
             
             while (dr.Read())
             {
-                SubCategories subCategory = new SubCategories();
+                subCategory = new SubCategories();
                 subCategory.KategoriId = dr[2].ToString();
                 subCategory.AltKategoriName = dr[1].ToString();
                 subCategories.Add(subCategory);
-                Debug.WriteLine(dr[1]);
             }
             
             con.Close();
             dr.Close();
         }
-        //selin bir şey ekledi
-        //selin iki şey ekledi
         public List<string> FillCombobox()
         {
             return categories.Select(x => x.CategoryName1).ToList();
         }
 
-        public List<string> FilterCategory(string topCategoryid)
+        public List<string> FilterCategory(string text,string id)
         {
-            if (subCategories.All(x => x.KategoriId.Equals(topCategoryid)))
+            if (id.Equals(text))
             {
                 return subCategories.Select(x => x.AltKategoriName).ToList();
             }

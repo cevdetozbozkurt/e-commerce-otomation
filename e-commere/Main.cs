@@ -18,11 +18,12 @@ namespace e_commere
             InitializeComponent();
         }
 
-        SqlConnection connection = new SqlConnection("Data Source=EREN\\ROOT;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        CategoryProvider provider = new CategoryProvider();
+        SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
 
         private void Main_Load(object sender, EventArgs e)
         {
-
+            cmbCategories.DataSource = provider.FillCombobox();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace e_commere
             Login login = new Login();
             this.Hide();
             login.ShowDialog();
-            this.Show();
+            //this.Show();
         }
 
         private void registerButton_Click(object sender, EventArgs e)
@@ -66,6 +67,16 @@ namespace e_commere
             Main main = new Main();
             main.ShowDialog();
             this.Hide();
+        }
+
+        private void cmbSubCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
