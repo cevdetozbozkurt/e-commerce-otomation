@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace e_commere
 {
@@ -20,7 +21,8 @@ namespace e_commere
 
         CategoryProvider provider = new CategoryProvider();
         SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
-
+        SqlDataReader dr;
+        string text;
         private void Main_Load(object sender, EventArgs e)
         {
             cmbCategories.DataSource = provider.FillCombobox();
@@ -49,12 +51,12 @@ namespace e_commere
 
         private void pictureBox19_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void pictureBox20_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -76,7 +78,18 @@ namespace e_commere
 
         private void cmbCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select Kategori.kategoriid from altkategori inner join Kategori on Kategori.KategoriId = AltKategori.KategoriId where KategoriAdi = '" + cmbCategories.Text + "'";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                text = dr[0].ToString();
+            }
+            cmbSubCategories.DataSource = provider.FilterCategory(text);
+            dr.Close();
+            con.Close();
         }
     }
 }

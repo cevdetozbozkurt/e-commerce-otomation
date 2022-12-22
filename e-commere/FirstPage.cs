@@ -34,14 +34,13 @@ namespace e_commere
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "select Kategori.kategoriid from altkategori inner join Kategori on Kategori.KategoriId = AltKategori.KategoriId where KategoriAdi = '" + cmbCategories.SelectedItem.ToString() + "'";
+            cmd.CommandText = "select Kategori.kategoriid from altkategori inner join Kategori on Kategori.KategoriId = AltKategori.KategoriId where KategoriAdi = '" + cmbCategories.Text + "'";
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 text = dr[0].ToString();
             }
-            Debug.WriteLine(provider.subCategory.KategoriId);
-            cmbSubCategories.DataSource = provider.FilterCategory(text, provider.subCategory.KategoriId);
+            cmbSubCategories.DataSource = provider.FilterCategory(text);
             dr.Close();
             con.Close();
         }

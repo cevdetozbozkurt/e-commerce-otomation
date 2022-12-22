@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Windows.Forms.VisualStyles;
 
 namespace e_commere
 {
@@ -62,13 +63,10 @@ namespace e_commere
             return categories.Select(x => x.CategoryName1).ToList();
         }
 
-        public List<string> FilterCategory(string text,string id)
+        public List<string> FilterCategory(string text)
         {
-            if (id.Equals(text))
-            {
-                return subCategories.Select(x => x.AltKategoriName).ToList();
-            }
-            return null;
+            var query1 = subCategories.Where(x => x.KategoriId.Equals(text));
+            return query1.Select(x => x.AltKategoriName).ToList();
         }
     }
 }
