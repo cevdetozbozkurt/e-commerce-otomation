@@ -52,7 +52,19 @@ namespace e_commere
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if(comboBox1.Text.Equals("Ürün Sat"))
+            {
+                UrunEkleForm urunEkleForm = new UrunEkleForm();
+                urunEkleForm.ShowDialog();
+                con.Close();
+            }else if(comboBox1.Text.Equals("Profilim"))
+            {
+                dr.Close();
+                con.Close();
+                Profile profile = new Profile();
+                this.Hide();
+                profile.ShowDialog();
+            }
         }
 
         private void pictureBox20_Click(object sender, EventArgs e)
@@ -74,9 +86,7 @@ namespace e_commere
 
         private void button9_Click(object sender, EventArgs e)
         {
-            UrunEkleForm urunEkleForm = new UrunEkleForm();
-            urunEkleForm.ShowDialog();
-            con.Close();
+            
         }
     }
 }

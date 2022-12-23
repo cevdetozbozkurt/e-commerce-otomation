@@ -46,9 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categories.cs" />
-    <Compile Include="CategoryProvider.cs" />
-    <Compile Include="Customer.cs" />
+    <Compile Include="src\Categories.cs" />
+    <Compile Include="src\CategoryProvider.cs" />
+    <Compile Include="src\Customer.cs" />
     <Compile Include="DataView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,8 +73,15 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductProvider.cs" />
-    <Compile Include="Products.cs" />
+    <Compile Include="src\ImageProvider.cs" />
+    <Compile Include="src\ProductProvider.cs" />
+    <Compile Include="src\Products.cs" />
+    <Compile Include="Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.cs">
@@ -85,7 +92,7 @@
     </Compile>
     <Compile Include="src\Main\main.cs" />
     <Compile Include="SubCategories.cs" />
-    <Compile Include="UrunEkle.cs" />
+    <Compile Include="src\UrunEkle.cs" />
     <Compile Include="UrunEkleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

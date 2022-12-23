@@ -102,10 +102,6 @@ namespace e_commere
             productProvider.AddProduct(productCode: "123", productName.Text, productPrice.Text, productComment.Text, categoryIdText, subCategoryIdText);
 
 
-
-
-
-
             //Ürünlere Resim Eklemek için dosya okuma :
             FileStream stream = new FileStream(imagePath1, FileMode.Open, FileAccess.Read);
             FileStream stream1 = new FileStream(imagePath2, FileMode.Open, FileAccess.Read);
@@ -138,7 +134,7 @@ namespace e_commere
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
 
-            cmd.CommandText = "insert into UrunResim(Resim1,Resim2,Resim3,Resim4) values(@image1,@image2,@image3,@image4)";
+            cmd.CommandText = "insert into UrunResim(Resim1,Resim2,Resim3,Resim4,urunid) values(@image1,@image2,@image3,@image4,@id)";
             SqlParameter imageParameter = new SqlParameter("@image1", SqlDbType.Image);
             imageParameter.Value = pic1;
             cmd.Parameters.Add(imageParameter);
@@ -151,6 +147,8 @@ namespace e_commere
             SqlParameter imageParameter3 = new SqlParameter("@image4", SqlDbType.Image);
             imageParameter3.Value = pic4;
             cmd.Parameters.Add(imageParameter3);
+            SqlParameter idParameter = new SqlParameter("@id", SqlDbType.Int);
+            idParameter.Value = int.Parse(categoryIdText);
            
             cmd.Parameters.Add("@image1",SqlDbType.Image,pic1.Length).Value = pic1;
             cmd.Parameters.Add("@image2",SqlDbType.Image,pic2.Length).Value = pic2;

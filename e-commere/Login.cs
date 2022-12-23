@@ -1,9 +1,11 @@
-﻿using System;
+﻿using e_commere.src;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,10 +20,9 @@ namespace e_commere
         {
             InitializeComponent();
         }
+        private static string memberId;
 
-
-
-        
+        public static string MemberId { get => memberId; set => memberId = value; }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -43,6 +44,7 @@ namespace e_commere
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             ArrayList pass = new ArrayList();
+            
             bool isThere = false;
             bool isPasswordTrue = false;
             while (reader.Read())
@@ -57,11 +59,13 @@ namespace e_commere
             if (isThere)
             {
 
-                cmd.CommandText = "select uyesifre from uye where uyeemail = " + "'" + eMailTextBox.Text + "'";
+                cmd.CommandText = "select uyesifre,uyeid from uye where uyeemail = " + "'" + eMailTextBox.Text + "'";
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     pass.Add(reader["uyesifre"]);
+                    MemberId = reader["uyeid"].ToString();
+
                 }
                 foreach (string i in pass)
                 {
@@ -115,6 +119,13 @@ namespace e_commere
         private void label1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register register = new Register();
+            this.Hide();
+            register.ShowDialog();
         }
     }
 }

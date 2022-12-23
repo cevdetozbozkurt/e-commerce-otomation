@@ -1,4 +1,5 @@
-﻿using System;
+﻿using e_commere.src;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,7 @@ namespace e_commere
         private void Main_Load(object sender, EventArgs e)
         {
             cmbCategories.DataSource = provider.FillCombobox();
+            ImageProvider.GetImage(pictureBox1);
         }
 
         private void loginButton_Click(object sender, EventArgs e)

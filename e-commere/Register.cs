@@ -32,7 +32,24 @@ namespace e_commere
         {
             
         }
+        bool IsValidEmail(string email)
+        {
+            var trimmedEmail = email.Trim();
 
+            if (trimmedEmail.EndsWith("."))
+            {
+                return false; // suggested by @TK-421
+            }
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == trimmedEmail;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         private void registerButton_Click(object sender, EventArgs e)
         {
             connection.Open();
@@ -77,6 +94,9 @@ namespace e_commere
                 }else if(hata == 3)
                 {
                     MessageBox.Show("Daha önce bu email ile kayıt olunmuş lütfen başka bir mail giriniz...", "uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }else if (!IsValidEmail(mailText.Text))
+                {
+                    MessageBox.Show("Lütfen düzgün bir email formatı giriniz.", "uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
@@ -132,8 +152,25 @@ namespace e_commere
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Main main = new Main(); // Ana sayfaya dönme
-            main.ShowDialog();
+            
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.ShowDialog();
+        }
+
+        private void phoneNumText_TextChanged(object sender, EventArgs e2/*, KeyPressEventArgs e*/)
+        {
+            /*
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                
+            }
+            */
         }
     }
 }
