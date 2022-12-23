@@ -76,6 +76,7 @@ namespace e_commere
         {
             UrunEkleForm urunEkleForm = new UrunEkleForm();
             urunEkleForm.ShowDialog();
+            con.Close();
         }
     }
 }

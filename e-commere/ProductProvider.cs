@@ -32,8 +32,8 @@ namespace e_commere
             cmd.Parameters.Add("@name", SqlDbType.VarChar, productName.Length).Value = productName;
             cmd.Parameters.Add("@price", SqlDbType.Money, productPrice.Length).Value = productPrice;
             cmd.Parameters.Add("@comment", SqlDbType.Text, productComment.Length).Value = productComment;
-            cmd.Parameters.Add("@categoryId", SqlDbType.Int, categoryId.Length).Value = Int16.Parse(categoryId);
-            cmd.Parameters.Add("@subCategoryId", SqlDbType.Int, subCategoryId.Length).Value = Int32.Parse(subCategoryId);
+            cmd.Parameters.Add("@categoryId", SqlDbType.Int, int.Parse(categoryId)).Value = int.Parse(categoryId);
+            cmd.Parameters.Add("@subCategoryId", SqlDbType.Int, subCategoryId.Length).Value = int.Parse(subCategoryId);
             cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = DateTime.Now;
             cmd.ExecuteNonQuery();
             con.Close();
