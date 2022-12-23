@@ -71,5 +71,11 @@ namespace e_commere
         {
             
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            UrunEkleForm urunEkleForm = new UrunEkleForm();
+            urunEkleForm.ShowDialog();
+        }
     }
 }

@@ -117,6 +117,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.panel6.SuspendLayout();
@@ -1214,6 +1215,16 @@
             this.pictureBox21.TabIndex = 63;
             this.pictureBox21.TabStop = false;
             // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(732, 82);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(98, 27);
+            this.button9.TabIndex = 64;
+            this.button9.Text = "button9";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // FirstPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1222,6 +1233,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1268, 1045);
             this.ControlBox = false;
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.pictureBox21);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
@@ -1412,5 +1424,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox21;
+        private System.Windows.Forms.Button button9;
     }
 }
