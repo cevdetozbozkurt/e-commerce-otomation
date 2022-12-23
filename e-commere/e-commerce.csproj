@@ -46,6 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SelinForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelinForm1.Designer.cs">
+      <DependentUpon>SelinForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelinForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelinForm2.Designer.cs">
+      <DependentUpon>SelinForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelinForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelinForm3.Designer.cs">
+      <DependentUpon>SelinForm3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelinForm4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelinForm4.Designer.cs">
+      <DependentUpon>SelinForm4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelinForm5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelinForm5.Designer.cs">
+      <DependentUpon>SelinForm5.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Categories.cs" />
     <Compile Include="src\CategoryProvider.cs" />
     <Compile Include="src\Customer.cs" />
