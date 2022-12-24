@@ -162,6 +162,9 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SelinForm1.resx">
+      <DependentUpon>SelinForm1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UrunEkleForm.resx">
       <DependentUpon>UrunEkleForm.cs</DependentUpon>
     </EmbeddedResource>

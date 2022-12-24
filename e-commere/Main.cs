@@ -27,7 +27,7 @@ namespace e_commere
         private void Main_Load(object sender, EventArgs e)
         {
             cmbCategories.DataSource = provider.FillCombobox();
-            ImageProvider.GetImage(pictureBox1);
+            //ImageProvider.GetImage(pictureBox1);
         }
 
         private void loginButton_Click(object sender, EventArgs e)

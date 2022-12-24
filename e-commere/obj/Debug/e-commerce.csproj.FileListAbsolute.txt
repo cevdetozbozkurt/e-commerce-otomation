@@ -30,3 +30,4 @@ D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e-commere.exe
 D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e-commere.pdb
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.UrunEkleForm.resources
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.Profile.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.SelinForm1.resources

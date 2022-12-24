@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
-using static System.Net.Mime.MediaTypeNames;
 using Image = System.Drawing.Image;
 
 namespace e_commere
@@ -28,9 +27,7 @@ namespace e_commere
         string categoryIdText;
         string subCategoryIdText;
         string imagePath1;
-        string imagePath2;
-        string imagePath3;
-        string imagePath4;
+        string productIdText;
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -52,49 +49,11 @@ namespace e_commere
                 imagePath1 = openFileDialog.FileName;
             }
         }
-
-        private void chosePic2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Resim Seç";
-            openFileDialog.Filter = "Png(*.png)|*.png| Jpeg(*.jpeg)|*.jpeg| Jpg(*.jpg)|.jpg| Gif(*.gif)|*.gif";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox2.Image = Image.FromFile(openFileDialog.FileName);
-                imagePath2 = openFileDialog.FileName;
-            }
-        }
-
-        private void chosePic3_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Resim Seç";
-            openFileDialog.Filter = "Png(*.png)|*.png| Jpeg(*.jpeg)|*.jpeg| Jpg(*.jpg)|.jpg| Gif(*.gif)|*.gif";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox3.Image = Image.FromFile(openFileDialog.FileName);
-                imagePath3 = openFileDialog.FileName;
-            }
-        }
-
-        private void chosePic4_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Resim Seç";
-            openFileDialog.Filter = " Png(*.png)|*.png| Jpeg(*.jpeg)|*.jpeg| Jpg(*.jpg)|.jpg| Gif(*.gif)|*.gif";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox4.Image = Image.FromFile(openFileDialog.FileName);
-                imagePath4 = openFileDialog.FileName;
-            }
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             //database connection yapıldı.
             con.Open();
-
-            //ürünlerin 
+            
 
             //ürünlerin bilgilerini alıp database e atmak için :
 
@@ -104,58 +63,37 @@ namespace e_commere
 
             //Ürünlere Resim Eklemek için dosya okuma :
             FileStream stream = new FileStream(imagePath1, FileMode.Open, FileAccess.Read);
-            FileStream stream1 = new FileStream(imagePath2, FileMode.Open, FileAccess.Read);
-            FileStream stream2 = new FileStream(imagePath3, FileMode.Open, FileAccess.Read);
-            FileStream stream3 = new FileStream(imagePath4, FileMode.Open, FileAccess.Read);
 
             BinaryReader br = new BinaryReader(stream);
-            BinaryReader br1 = new BinaryReader(stream1);
-            BinaryReader br2 = new BinaryReader(stream2);   
-            BinaryReader br3 = new BinaryReader(stream3);
-    
+
             byte[] pic1 = br.ReadBytes((int)stream.Length);
-            byte[] pic2 = br1.ReadBytes((int)stream1.Length);
-            byte[] pic3 = br2.ReadBytes((int)stream2.Length);
-            byte[] pic4 = br3.ReadBytes((int)stream3.Length);
-    
+
             br.Close();
-            br1.Close();
-            br2.Close();
-            br3.Close();
      
-            stream.Close();
-            stream1.Close();
-            stream2.Close();
-            stream3.Close();
-     
+            stream.Close();     
 
             //Seçilen resimleri database'e resim yolu verilerek aktarma:
             
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
+            
+            cmd.CommandText = "select urunid from urun where urunadi = '" + productName.Text + "'";
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                productIdText = dr[0].ToString();
+            }
+            dr.Close();
 
-            cmd.CommandText = "insert into UrunResim(Resim1,Resim2,Resim3,Resim4,urunid) values(@image1,@image2,@image3,@image4,@id)";
+            cmd.CommandText = "insert into UrunResim(Resim1,urunid) values(@image1,@id)";
             SqlParameter imageParameter = new SqlParameter("@image1", SqlDbType.Image);
             imageParameter.Value = pic1;
             cmd.Parameters.Add(imageParameter);
-            SqlParameter imageParameter1 = new SqlParameter("@image2", SqlDbType.Image);
-            imageParameter1.Value = pic2;
-            cmd.Parameters.Add(imageParameter1);
-            SqlParameter imageParameter2 = new SqlParameter("@image3", SqlDbType.Image);
-            imageParameter2.Value = pic3;
-            cmd.Parameters.Add(imageParameter2);
-            SqlParameter imageParameter3 = new SqlParameter("@image4", SqlDbType.Image);
-            imageParameter3.Value = pic4;
-            cmd.Parameters.Add(imageParameter3);
+
             SqlParameter idParameter = new SqlParameter("@id", SqlDbType.Int);
-            idParameter.Value = int.Parse(categoryIdText);
-           
-            cmd.Parameters.Add("@image1",SqlDbType.Image,pic1.Length).Value = pic1;
-            cmd.Parameters.Add("@image2",SqlDbType.Image,pic2.Length).Value = pic2;
-            cmd.Parameters.Add("@image3",SqlDbType.Image,pic3.Length).Value = pic3;
-            cmd.Parameters.Add("@image4",SqlDbType.Image,pic4.Length).Value = pic4;
-          
-            //cmd.ExecuteNonQuery();
+            idParameter.Value = int.Parse(productIdText);
+            cmd.Parameters.Add(idParameter);
+
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("KayıtEklendi","Kayıt",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -193,6 +131,11 @@ namespace e_commere
             }
             dr2.Close();
             con2.Close();
+        }
+
+        private void productName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
