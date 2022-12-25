@@ -141,6 +141,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.memberPass);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "hesapSilme";
             this.Text = "Hesap Silme";
             this.ResumeLayout(false);

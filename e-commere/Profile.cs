@@ -80,37 +80,49 @@ namespace e_commere
 
         private void button2_Click(object sender, EventArgs e)
         {
-            sifreleriYonet sifre = new sifreleriYonet();
-            this.Hide();
-            sifre.ShowDialog();
+            loadform(new sifreleriYonet());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            adress adres = new adress();
-            this.Hide();
-            adres.ShowDialog();
+            loadform(new adress());
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            siparisler siparis = new siparisler();
-            this.Hide();
-            siparis.ShowDialog();
+            loadform(new siparisler());
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            hesapSilme sil = new hesapSilme();
-            this.Hide();
-            sil.ShowDialog();
+            loadform(new urunlerim());
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            UrunEkleForm ekle = new UrunEkleForm();
-            this.Hide();
-            ekle.ShowDialog();
+            loadform(new UrunEkleForm());
+        }
+        
+        // Panelleri ortak formda gösterme komutları
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            InitializeComponent();
+        }
+        public void loadform(object Form)
+        {
+            if (this.mainpanel.Controls.Count > 0)
+                this.mainpanel.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.mainpanel.Controls.Add(f);
+            this.mainpanel.Tag= f;
+            f.Show();
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            loadform(new hesapSilme());
         }
     }
 }

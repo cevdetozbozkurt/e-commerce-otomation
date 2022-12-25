@@ -94,6 +94,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "urunlerim";
             this.Text = "Ürünlerim";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

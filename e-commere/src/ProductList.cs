@@ -19,18 +19,18 @@ namespace e_commere.src
             List<PictureBox> pictureBoxes = new List<PictureBox>();
             int witdh = 118;
             int height = 0;
-            for (int i = 0; i < numberOfItem; i++,height++)
+            for (int i = 0; i < numberOfItem; i++, height++)
             {
                 if (height == 4)
                 {
                     height = 0;
                 }
-                
+
                 panel.Add(new Panel());
                 panel[i].BorderStyle = BorderStyle.FixedSingle;
-                panel[i].Location= new Point(199+(height*139), witdh);
-                panel[i].Size = new Size(133,175);
-                panel[i].Margin = new Padding(3,2,3,2);
+                panel[i].Location = new Point(199 + (height * 139), witdh);
+                panel[i].Size = new Size(133, 175);
+                panel[i].Margin = new Padding(3, 2, 3, 2);
                 panel[i].Anchor = AnchorStyles.None;
                 panel[i].TabIndex = 70;
                 form.Controls.Add(panel[i]);
@@ -43,7 +43,7 @@ namespace e_commere.src
                 if ((i + 1) % 4 == 0)
                 {
                     witdh = 305;
-                    
+
                 }
             }
         }

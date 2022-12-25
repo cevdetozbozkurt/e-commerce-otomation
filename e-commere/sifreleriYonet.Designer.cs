@@ -140,6 +140,7 @@
             this.Controls.Add(this.memberMail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "sifreleriYonet";
             this.Text = "Şifre yönetimi";
             this.Load += new System.EventHandler(this.sifreleriYonet_Load);

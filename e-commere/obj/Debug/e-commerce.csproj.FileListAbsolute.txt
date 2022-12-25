@@ -42,3 +42,4 @@ C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.siparisler.resources
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.DenemeFrorm.resources
 D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.urunlerim.resources
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.Form1.resources

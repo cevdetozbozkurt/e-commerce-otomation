@@ -50,7 +50,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.mainpanel = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -58,7 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.mainpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -277,28 +277,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel2
+            // mainpanel
             // 
-            this.panel2.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.linkLabel1);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.memberName);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.memberPass);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.memberMail);
-            this.panel2.Controls.Add(this.memberSurname);
-            this.panel2.Controls.Add(this.memberPhone);
-            this.panel2.Location = new System.Drawing.Point(294, 118);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(693, 447);
-            this.panel2.TabIndex = 65;
+            this.mainpanel.BackColor = System.Drawing.Color.LavenderBlush;
+            this.mainpanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainpanel.Controls.Add(this.button7);
+            this.mainpanel.Controls.Add(this.pictureBox3);
+            this.mainpanel.Controls.Add(this.linkLabel1);
+            this.mainpanel.Controls.Add(this.label8);
+            this.mainpanel.Controls.Add(this.memberName);
+            this.mainpanel.Controls.Add(this.label1);
+            this.mainpanel.Controls.Add(this.label2);
+            this.mainpanel.Controls.Add(this.label3);
+            this.mainpanel.Controls.Add(this.label4);
+            this.mainpanel.Controls.Add(this.memberPass);
+            this.mainpanel.Controls.Add(this.label5);
+            this.mainpanel.Controls.Add(this.memberMail);
+            this.mainpanel.Controls.Add(this.memberSurname);
+            this.mainpanel.Controls.Add(this.memberPhone);
+            this.mainpanel.Location = new System.Drawing.Point(294, 118);
+            this.mainpanel.Name = "mainpanel";
+            this.mainpanel.Size = new System.Drawing.Size(693, 447);
+            this.mainpanel.TabIndex = 65;
+            this.mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button7
             // 
@@ -351,7 +352,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1056, 670);
             this.ControlBox = false;
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox19);
             this.Controls.Add(this.label9);
@@ -364,8 +365,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.mainpanel.ResumeLayout(false);
+            this.mainpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -395,7 +396,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel mainpanel;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button7;

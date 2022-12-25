@@ -98,7 +98,7 @@ namespace e_commere
         private void button17_Click(object sender, EventArgs e)
         {
             //benim gönderdiğim form yok 
-            
+            Form1 dn = new Form1();
             dn.ShowDialog();
 
         }
