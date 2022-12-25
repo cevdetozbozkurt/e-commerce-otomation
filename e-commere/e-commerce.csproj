@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DenemeFrorm.cs">
+    <Compile Include="urunlerim.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DenemeFrorm.Designer.cs">
-      <DependentUpon>DenemeFrorm.cs</DependentUpon>
+    <Compile Include="urunlerim.Designer.cs">
+      <DependentUpon>urunlerim.cs</DependentUpon>
     </Compile>
     <Compile Include="sifreleriYonet.cs">
       <SubType>Form</SubType>
@@ -103,11 +103,7 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\Denemeclass.cs" />
     <Compile Include="src\ImageProvider.cs" />
-    <Compile Include="src\ProductList.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="src\ProductProvider.cs" />
     <Compile Include="src\Products.cs" />
     <Compile Include="Profile.cs">
@@ -125,12 +121,6 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Main\main.cs" />
-    <Compile Include="Stok.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Stok.Designer.cs">
-      <DependentUpon>Stok.cs</DependentUpon>
-    </Compile>
     <Compile Include="SubCategories.cs" />
     <Compile Include="src\UrunEkle.cs" />
     <Compile Include="UrunEkleForm.cs">
@@ -149,9 +139,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataView.resx">
       <DependentUpon>DataView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DenemeFrorm.resx">
-      <DependentUpon>DenemeFrorm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FirstPage.resx">
       <DependentUpon>FirstPage.cs</DependentUpon>
@@ -189,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UrunEkleForm.resx">
       <DependentUpon>UrunEkleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urunlerim.resx">
+      <DependentUpon>urunlerim.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

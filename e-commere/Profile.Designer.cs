@@ -233,7 +233,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(200, 66);
             this.button5.TabIndex = 69;
-            this.button5.Text = "Hesabımı Sil";
+            this.button5.Text = "Ürünlerim";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -326,12 +326,12 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.linkLabel1.Location = new System.Drawing.Point(515, 354);
+            this.linkLabel1.Location = new System.Drawing.Point(565, 378);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(119, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(83, 16);
             this.linkLabel1.TabIndex = 14;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Bilgilerimi güncelle";
+            this.linkLabel1.Text = "Hesabımı Sil";
             // 
             // label8
             // 
