@@ -75,4 +75,5 @@ namespace e_commere
             this.Hide();
             ekle.ShowDialog();
         }
+    }
 }

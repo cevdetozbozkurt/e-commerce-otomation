@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,32 @@ namespace e_commere
             InitializeComponent();
         }
 
-        SqlConnection connection = new SqlConnection("Data Source=4REEF\\SQLEXPRESS;Initial Catalog=E-ticaret;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection connection = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
+        string newMemberId;
 
-
+        public void AddAddress()
+        {
+            SqlCommand command = new SqlCommand();
+            command.Connection = connection;
+            command.CommandText = "insert into UyeAdres(uyeid,adresmetni,adresilce,adressehir,adrespk)" +
+                        "values(@uyeid,@adresmetni,@adresilce,@adresil,@adrespk)";
+            SqlParameter uyeid = new SqlParameter("@uyeid", SqlDbType.Int);
+            uyeid.Value = int.Parse(newMemberId);
+            command.Parameters.Add(uyeid);
+            SqlParameter adresTextParam = new SqlParameter("@adresmetni", SqlDbType.Text);
+            adresTextParam.Value = addressText.Text.ToString(); 
+            command.Parameters.Add(adresTextParam);
+            SqlParameter adresilce = new SqlParameter("@adresilce", SqlDbType.NVarChar);
+            adresilce.Value = IlceTextBox.Text.ToString();
+            command.Parameters.Add(adresilce);
+            SqlParameter adresil = new SqlParameter("@adresil", SqlDbType.NVarChar);
+            adresil.Value = ilTextBox.Text.ToString();
+            command.Parameters.Add(adresil);
+            SqlParameter adrespk = new SqlParameter("@adrespk", SqlDbType.NVarChar);
+            adrespk.Value = PostalCode.Text.ToString();
+            command.Parameters.Add(adrespk);
+            int basari2 = command.ExecuteNonQuery();
+        }
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -64,7 +88,8 @@ namespace e_commere
             {
                 int hata = 0;
                 if (nameText.Text == string.Empty || lastNameText.Text == string.Empty || phoneNumText.Text == string.Empty || mailText.Text == string.Empty
-                    || passwordText.Text == string.Empty || passwordCheckText.Text == string.Empty || addressText.Text == string.Empty)
+                    || passwordText.Text == string.Empty || passwordCheckText.Text == string.Empty || addressText.Text == string.Empty || ilTextBox.Text == string.Empty
+                    || IlceTextBox.Text == string.Empty)
                 {
                     hata = 1;
                 }
@@ -103,8 +128,17 @@ namespace e_commere
                     
                     SqlCommand add = new SqlCommand("insert into Uye(UyeAdi,UyeSoyadi,UyeTelefon,UyeEmail,UyeSifre,UyeTarih) values ('" + nameText.Text + "','" + lastNameText.Text + "','" + phoneNumText.Text + "','" + mailText.Text + "','" + passwordText.Text + "','" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") + "')", connection);
                     int basari = add.ExecuteNonQuery();
+
+                    cmd.CommandText = "select top 1 uyeid from uye order by uyeid desc";
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        newMemberId = reader[0].ToString();
+                    }
+                    reader.Close();
                     if (basari == 1)
                     {
+                        AddAddress();
                         MessageBox.Show("Kayıt Eklendi");
                     }
                     else
@@ -115,7 +149,7 @@ namespace e_commere
             }
             catch
             {
-
+                
             }
             finally
             {

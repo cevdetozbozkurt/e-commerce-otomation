@@ -58,7 +58,7 @@ namespace e_commere
             //ürünlerin bilgilerini alıp database e atmak için :
 
             productProvider = new ProductProvider();
-            productProvider.AddProduct(productCode: "123", productName.Text, productPrice.Text, productComment.Text, categoryIdText, subCategoryIdText);
+            productProvider.AddProduct(productCode: Login.MemberId + categoryIdText + subCategoryIdText, productName.Text, productPrice.Text, productComment.Text, categoryIdText, subCategoryIdText, numOfProduct.Text);
 
 
             //Ürünlere Resim Eklemek için dosya okuma :
@@ -98,39 +98,6 @@ namespace e_commere
             con.Close();
             MessageBox.Show("KayıtEklendi","Kayıt",MessageBoxButtons.OK,MessageBoxIcon.Information);
             
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            con.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "select Kategori.kategoriid from altkategori inner join Kategori on Kategori.KategoriId = AltKategori.KategoriId where KategoriAdi = '" + comboBox1.Text + "'";
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                categoryIdText = dr[0].ToString();
-            }
-            comboBox2.DataSource = categoryProvider.FilterCategory(categoryIdText);
-            dr.Close();
-            con.Close();
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SqlDataReader dr2;
-            SqlConnection con2 = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
-            con2.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con2;
-            cmd.CommandText = "select altkategoriId from altkategori where altkategoriadi =  '" + comboBox2.Text + "'";
-            dr2 = cmd.ExecuteReader();
-            while (dr2.Read())
-            {
-                subCategoryIdText = dr2[0].ToString();
-            }
-            dr2.Close();
-            con2.Close();
         }
 
         private void productName_TextChanged(object sender, EventArgs e)
@@ -190,6 +157,39 @@ namespace e_commere
             UrunEkleForm ekle = new UrunEkleForm();
             this.Hide();
             ekle.ShowDialog();
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            SqlDataReader dr2;
+            SqlConnection con2 = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
+            con2.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con2;
+            cmd.CommandText = "select altkategoriId from altkategori where altkategoriadi =  '" + comboBox2.Text + "'";
+            dr2 = cmd.ExecuteReader();
+            while (dr2.Read())
+            {
+                subCategoryIdText = dr2[0].ToString();
+            }
+            dr2.Close();
+            con2.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select Kategori.kategoriid from altkategori inner join Kategori on Kategori.KategoriId = AltKategori.KategoriId where KategoriAdi = '" + comboBox1.Text + "'";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                categoryIdText = dr[0].ToString();
+            }
+            comboBox2.DataSource = categoryProvider.FilterCategory(categoryIdText);
+            dr.Close();
+            con.Close();
         }
     }
 }

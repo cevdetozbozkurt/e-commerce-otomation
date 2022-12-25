@@ -93,5 +93,12 @@ namespace e_commere
             dr.Close();
             con.Close();
         }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            DenemeFrorm dn = new DenemeFrorm();
+            dn.ShowDialog();
+
+        }
     }
 }

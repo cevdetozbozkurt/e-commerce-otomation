@@ -30,17 +30,16 @@ namespace e_commere
             try
             {
                 DataSet ds = new DataSet();
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from Uye",connection);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select Urunadi,urunfiyati from Urun",connection);
                 sqlDataAdapter.Fill(ds);
+                Button btn = new Button();
                 dataGridView1.DataSource = ds.Tables[0];
 
-                dataGridView1.Columns[1].HeaderText = "UyeId";
-                dataGridView1.Columns[1].HeaderText = "UyeAdi";
-                dataGridView1.Columns[1].HeaderText = "UyeSoyadi";
-                dataGridView1.Columns[1].HeaderText = "UyeTelefon";
-                dataGridView1.Columns[1].HeaderText = "UyeEmail";
-                dataGridView1.Columns[1].HeaderText = "UyeSifre";
-                dataGridView1.Columns[1].HeaderText = "UyeTarih";
+                dataGridView1.Columns[1].HeaderText = "Ürün Adı";
+                dataGridView1.Columns[1].HeaderText = "Ürün Fiyatı";
+                dataGridView1.Columns[1].HeaderText = "Satın Al";
+               
+
             }
             catch(SqlException e)
             {

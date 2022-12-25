@@ -11,7 +11,7 @@ namespace e_commere
 {
     internal class CategoryProvider
     {
-        SqlConnection con = new SqlConnection("Data Source=4REEF\\SQLEXPRESS;Initial Catalog=E-ticaret;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
 
         public List<Categories> categories { get; set; }
         public List<SubCategories> subCategories { get; set; }
