@@ -19,8 +19,8 @@ namespace e_commere
         {
             InitializeComponent();
         }
-
-        SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
+        //Data Source=4REEF\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+        SqlConnection con = new SqlConnection("Data Source=4REEF\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         ProductProvider productProvider;
         CategoryProvider categoryProvider = new CategoryProvider();
         SqlDataReader dr;
@@ -54,7 +54,7 @@ namespace e_commere
             //database connection yapıldı.
             con.Open();
             
-
+            //orda bir tane de ürün adedi diye text box vardı o da yok senin yaptığın şeyden dolayı onu da ekler misin veya bekle
             //ürünlerin bilgilerini alıp database e atmak için :
 
             productProvider = new ProductProvider();

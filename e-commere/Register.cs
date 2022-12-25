@@ -20,7 +20,7 @@ namespace e_commere
             InitializeComponent();
         }
 
-        SqlConnection connection = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
+        SqlConnection connection = new SqlConnection("Data Source=4REEF\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         string newMemberId;
 
         public void AddAddress()

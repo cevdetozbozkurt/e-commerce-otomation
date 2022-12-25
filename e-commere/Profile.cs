@@ -15,7 +15,7 @@ namespace e_commere
     public partial class Profile : Form
     {
 
-        SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=4REEF\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         SqlDataReader dr;
         SqlCommand cmd = new SqlCommand();
         public Profile()
