@@ -11,7 +11,7 @@ namespace e_commere
 {
     internal class CategoryProvider
     {
-        SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=4REEF\\SQLEXPRESS;Initial Catalog=E-ticaret;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         public List<Categories> categories { get; set; }
         public List<SubCategories> subCategories { get; set; }
@@ -31,7 +31,7 @@ namespace e_commere
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "select KategoriAdi,kategoriid from Kategori";
+            cmd.CommandText = "select KategoriAdi,KategoriId from Kategori";
             SqlDataReader dr = cmd.ExecuteReader();
             
             while (dr.Read())
@@ -44,7 +44,7 @@ namespace e_commere
             }
             
             dr.Close();
-            cmd.CommandText = "select KategoriAdi, altkategoriadi, kategori.kategoriid, altkategori.kategoriid from Kategori inner join altkategori on kategori.kategoriid = altkategori.kategoriid";
+            cmd.CommandText = "select KategoriAdi, altkategoriadi, kategori.KategoriId, altkategori.KategoriId from Kategori inner join altkategori on kategori.KategoriId = altkategori.KategoriId";
             dr = cmd.ExecuteReader();
             
             while (dr.Read())

@@ -20,7 +20,7 @@ namespace e_commere
         }
 
         CategoryProvider provider = new CategoryProvider();
-        SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=4REEF\\SQLEXPRESS;Initial Catalog=E-ticaret;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         SqlDataReader dr;
         string text;
         private void FirstPage_Load(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace e_commere
                 con.Close();
             }else if(comboBox1.Text.Equals("Profilim"))
             {
-                dr.Close();
+                //dr.Close();
                 con.Close();
                 Profile profile = new Profile();
                 this.Hide();

@@ -46,35 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SelinForm1.cs">
+    <Compile Include="sifreleriYonet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelinForm1.Designer.cs">
-      <DependentUpon>SelinForm1.cs</DependentUpon>
+    <Compile Include="sifreleriYonet.Designer.cs">
+      <DependentUpon>sifreleriYonet.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelinForm2.cs">
+    <Compile Include="adress.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelinForm2.Designer.cs">
-      <DependentUpon>SelinForm2.cs</DependentUpon>
+    <Compile Include="adress.Designer.cs">
+      <DependentUpon>adress.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelinForm3.cs">
+    <Compile Include="siparisler.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelinForm3.Designer.cs">
-      <DependentUpon>SelinForm3.cs</DependentUpon>
+    <Compile Include="siparisler.Designer.cs">
+      <DependentUpon>siparisler.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelinForm4.cs">
+    <Compile Include="hesapSilme.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelinForm4.Designer.cs">
-      <DependentUpon>SelinForm4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SelinForm5.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SelinForm5.Designer.cs">
-      <DependentUpon>SelinForm5.cs</DependentUpon>
+    <Compile Include="hesapSilme.Designer.cs">
+      <DependentUpon>hesapSilme.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Categories.cs" />
     <Compile Include="src\CategoryProvider.cs" />
@@ -134,11 +128,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_E_ticaretDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="adress.resx">
+      <DependentUpon>adress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataView.resx">
       <DependentUpon>DataView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FirstPage.resx">
       <DependentUpon>FirstPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hesapSilme.resx">
+      <DependentUpon>hesapSilme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -162,8 +162,11 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelinForm1.resx">
-      <DependentUpon>SelinForm1.cs</DependentUpon>
+    <EmbeddedResource Include="sifreleriYonet.resx">
+      <DependentUpon>sifreleriYonet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="siparisler.resx">
+      <DependentUpon>siparisler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UrunEkleForm.resx">
       <DependentUpon>UrunEkleForm.cs</DependentUpon>

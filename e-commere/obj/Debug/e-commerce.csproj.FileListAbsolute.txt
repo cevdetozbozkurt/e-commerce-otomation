@@ -31,3 +31,9 @@ D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e-commere.pdb
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.UrunEkleForm.resources
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.Profile.resources
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.SelinForm1.resources
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.Profile.resources
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.UrunEkleForm.resources
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.adress.resources
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.hesapSilme.resources
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.sifreleriYonet.resources
+D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.siparisler.resources

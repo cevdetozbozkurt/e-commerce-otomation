@@ -36,7 +36,7 @@ namespace e_commere
 
         private void enteringButton_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=4REEF\\SQLEXPRESS;Initial Catalog=E-ticaret;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             SqlCommand cmd = new SqlCommand();
 
             cmd.Connection = conn;
@@ -59,12 +59,12 @@ namespace e_commere
             if (isThere)
             {
 
-                cmd.CommandText = "select uyesifre,uyeid from uye where uyeemail = " + "'" + eMailTextBox.Text + "'";
+                cmd.CommandText = "select uyesifre,uyeId from uye where uyeemail = " + "'" + eMailTextBox.Text + "'";
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     pass.Add(reader["uyesifre"]);
-                    MemberId = reader["uyeid"].ToString();
+                    MemberId = reader["uyeId"].ToString();
 
                 }
                 foreach (string i in pass)
@@ -126,6 +126,11 @@ namespace e_commere
             Register register = new Register();
             this.Hide();
             register.ShowDialog();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
