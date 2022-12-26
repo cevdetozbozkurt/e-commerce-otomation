@@ -24,9 +24,9 @@ namespace e_commere
 
         private void pictureBox20_Click(object sender, EventArgs e)
         {
-            FirstPage fp = new FirstPage();
+            Profile profile = new Profile();
             this.Hide();
-            fp.ShowDialog();
+            profile.ShowDialog();
         }
 
         private void pictureBox19_Click(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace e_commere
 
         private void button6_Click(object sender, EventArgs e)
         {
-            UrunEkleForm ekle = new UrunEkleForm();
+            urunSat ekle = new urunSat();
             this.Hide();
             ekle.ShowDialog();
         }

@@ -20,7 +20,7 @@ namespace e_commere
         }
 
         CategoryProvider provider = new CategoryProvider();
-        SqlConnection con = new SqlConnection("Data Source=4REEF\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
         SqlDataReader dr;
         string text;
         private void FirstPage_Load(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace e_commere
         {
             if(comboBox1.Text.Equals("Ürün Sat"))
             {
-                UrunEkleForm urunEkleForm = new UrunEkleForm();
+                urunSat urunEkleForm = new urunSat();
                 urunEkleForm.ShowDialog();
                 con.Close();
             }else if(comboBox1.Text.Equals("Profilim"))
@@ -87,6 +87,54 @@ namespace e_commere
         private void button9_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            urunVeYorum uvy = new urunVeYorum();
+            uvy.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            urunVeYorum uvy = new urunVeYorum();
+            uvy.Show();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            urunVeYorum uvy = new urunVeYorum();
+            uvy.Show();
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+            urunVeYorum uvy = new urunVeYorum();
+            uvy.Show();
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+            urunVeYorum uvy = new urunVeYorum();
+            uvy.Show();
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+            urunVeYorum uvy = new urunVeYorum();
+            uvy.Show();
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+            urunVeYorum uvy = new urunVeYorum();
+            uvy.Show();
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+            urunVeYorum uvy = new urunVeYorum();
+            uvy.Show();
         }
     }
 }

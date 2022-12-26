@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +16,7 @@ namespace e_commere
     public partial class Profile : Form
     {
 
-        SqlConnection con = new SqlConnection("Data Source=4REEF\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection con = new SqlConnection("Data Source = 4REEF\\SQLEXPRESS; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         SqlDataReader dr;
         SqlCommand cmd = new SqlCommand();
         public Profile()
@@ -28,10 +29,9 @@ namespace e_commere
             
             con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "select uyeadi,uyesoyadi,uyetelefon,uyeemail,uyesifre from uye where uyeId = '" + int.Parse(Login.MemberId) + "'";
-            Debug.WriteLine(int.Parse(Login.MemberId));
+            cmd.CommandText = "select uyeadi,uyesoyadi,uyetelefon,uyeemail,uyesifre from uye where uyeId = '" + "1"/*int.Parse(Login.MemberId)*/ + "'";
+           // Debug.WriteLine(int.Parse(Login.MemberId));
             dr = cmd.ExecuteReader();
-
             while (dr.Read())
             {
                 memberName.Text = dr[0].ToString();
@@ -80,49 +80,51 @@ namespace e_commere
 
         private void button2_Click(object sender, EventArgs e)
         {
-            loadform(new sifreleriYonet());
+            sifreleriYonet sifre = new sifreleriYonet();
+            this.Hide();
+            sifre.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            loadform(new adress());
+            adress adres = new adress();
+            this.Hide();
+            adres.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            loadform(new siparisler());
+            siparisler siparis = new siparisler();
+            this.Hide();
+            siparis.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            loadform(new urunlerim());
+            Ürünlerim urunum = new Ürünlerim();
+            this.Hide();
+            urunum.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            loadform(new UrunEkleForm());
-        }
-        
-        // Panelleri ortak formda gösterme komutları
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            InitializeComponent();
-        }
-        public void loadform(object Form)
-        {
-            if (this.mainpanel.Controls.Count > 0)
-                this.mainpanel.Controls.RemoveAt(0);
-            Form f = Form as Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.mainpanel.Controls.Add(f);
-            this.mainpanel.Tag= f;
-            f.Show();
+            urunSat ekle = new urunSat();
+            this.Hide();
+            ekle.ShowDialog();
         }
 
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            loadform(new hesapSilme());
+            hesapSilme sil = new hesapSilme();
+            this.Hide();
+            sil.ShowDialog();   
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            urunSat sat = new urunSat();
+            this.Hide();
+            sat.ShowDialog();
         }
     }
 }

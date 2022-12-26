@@ -59,16 +59,23 @@ namespace e_commere
 
         private void button1_Click(object sender, EventArgs e)
         {
-            hesapSilme sil = new hesapSilme();
+            Ürünlerim urunum = new Ürünlerim();
             this.Hide();
-            sil.ShowDialog();
+            urunum.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            UrunEkleForm ekle = new UrunEkleForm();
+            urunSat ekle = new urunSat();
             this.Hide();
             ekle.ShowDialog();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            urunSat sat = new urunSat();
+            this.Hide();
+            sat.ShowDialog();
         }
     }
 }

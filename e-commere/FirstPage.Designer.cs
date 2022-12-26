@@ -111,6 +111,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(176, 215);
             this.panel2.TabIndex = 33;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // linkLabel2
             // 
@@ -378,6 +379,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 215);
             this.panel1.TabIndex = 34;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // linkLabel3
             // 
@@ -428,6 +430,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(176, 215);
             this.panel3.TabIndex = 65;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // linkLabel5
             // 
@@ -478,6 +481,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(176, 215);
             this.panel4.TabIndex = 34;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // linkLabel7
             // 
@@ -528,6 +532,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(176, 215);
             this.panel5.TabIndex = 67;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // linkLabel9
             // 
@@ -578,6 +583,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(176, 215);
             this.panel6.TabIndex = 69;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // linkLabel11
             // 
@@ -628,6 +634,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(176, 215);
             this.panel7.TabIndex = 68;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // linkLabel13
             // 
@@ -678,6 +685,7 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(176, 215);
             this.panel8.TabIndex = 66;
+            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
             // linkLabel15
             // 

@@ -46,20 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Ürünlerim.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\ProductList.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="urunlerim.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="urunlerim.Designer.cs">
-      <DependentUpon>urunlerim.cs</DependentUpon>
+    <Compile Include="Ürünlerim.Designer.cs">
+      <DependentUpon>Ürünlerim.cs</DependentUpon>
     </Compile>
     <Compile Include="sifreleriYonet.cs">
       <SubType>Form</SubType>
@@ -112,7 +103,11 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\Denemeclass.cs" />
     <Compile Include="src\ImageProvider.cs" />
+    <Compile Include="src\ProductList.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="src\ProductProvider.cs" />
     <Compile Include="src\Products.cs" />
     <Compile Include="Profile.cs">
@@ -130,13 +125,19 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Main\main.cs" />
-    <Compile Include="SubCategories.cs" />
-    <Compile Include="src\UrunEkle.cs" />
-    <Compile Include="UrunEkleForm.cs">
+    <Compile Include="Stok.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UrunEkleForm.Designer.cs">
-      <DependentUpon>UrunEkleForm.cs</DependentUpon>
+    <Compile Include="Stok.Designer.cs">
+      <DependentUpon>Stok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubCategories.cs" />
+    <Compile Include="src\UrunEkle.cs" />
+    <Compile Include="urunSat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="urunSat.Designer.cs">
+      <DependentUpon>urunSat.cs</DependentUpon>
     </Compile>
     <Compile Include="_E_ticaretDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -149,11 +150,11 @@
     <EmbeddedResource Include="DataView.resx">
       <DependentUpon>DataView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ürünlerim.resx">
+      <DependentUpon>Ürünlerim.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FirstPage.resx">
       <DependentUpon>FirstPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="hesapSilme.resx">
       <DependentUpon>hesapSilme.cs</DependentUpon>
@@ -186,11 +187,8 @@
     <EmbeddedResource Include="siparisler.resx">
       <DependentUpon>siparisler.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UrunEkleForm.resx">
-      <DependentUpon>UrunEkleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="urunlerim.resx">
-      <DependentUpon>urunlerim.cs</DependentUpon>
+    <EmbeddedResource Include="urunSat.resx">
+      <DependentUpon>urunSat.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

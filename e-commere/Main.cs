@@ -21,8 +21,7 @@ namespace e_commere
         }
 
         CategoryProvider provider = new CategoryProvider();
-        //burada benim database imin konumu var seninkini değiştirmek için bir yerden kopyalayıp yapıştırman lazım Data Source=4REEF\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
-        SqlConnection con = new SqlConnection("Data Source=4REEF\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
         SqlDataReader dr;
         string text;
         private void Main_Load(object sender, EventArgs e)
@@ -97,8 +96,7 @@ namespace e_commere
 
         private void button17_Click(object sender, EventArgs e)
         {
-            //benim gönderdiğim form yok 
-            Form1 dn = new Form1();
+            Ürünlerim dn = new Ürünlerim();
             dn.ShowDialog();
 
         }
