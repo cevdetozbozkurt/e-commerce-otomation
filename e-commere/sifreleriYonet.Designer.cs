@@ -144,6 +144,7 @@
             this.memberPass.Name = "memberPass";
             this.memberPass.Size = new System.Drawing.Size(148, 26);
             this.memberPass.TabIndex = 35;
+            this.memberPass.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -182,6 +183,7 @@
             this.newPass2.Name = "newPass2";
             this.newPass2.Size = new System.Drawing.Size(148, 26);
             this.newPass2.TabIndex = 38;
+            this.newPass2.UseSystemPasswordChar = true;
             // 
             // newPass
             // 
@@ -190,6 +192,7 @@
             this.newPass.Name = "newPass";
             this.newPass.Size = new System.Drawing.Size(148, 26);
             this.newPass.TabIndex = 36;
+            this.newPass.UseSystemPasswordChar = true;
             // 
             // label8
             // 

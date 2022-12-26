@@ -71,7 +71,7 @@ namespace e_commere
                 {
                     if (i.ToString().Equals(passwordTextBox.Text))
                     {
-                        isPasswordTrue = true;
+                        isPasswordTrue = false;
                     }
                 }
                 reader.Close();

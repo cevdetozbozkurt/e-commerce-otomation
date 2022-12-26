@@ -114,7 +114,7 @@ namespace e_commere
             else
             {
                 MessageBox.Show("Şifreniz değiştirildi", "Başarı", MessageBoxButtons.OK);
-                cmd.CommandText = "update Uye set uyesifre = '"+ newPass.Text +"' where AltKategoriId = '" + Login.MemberId + "'";
+                cmd.CommandText = "update Uye set uyesifre = '"+ newPass.Text +"' where uyeid = '" + Login.MemberId + "'";
                 cmd.ExecuteNonQuery();
             }
             con.Close();

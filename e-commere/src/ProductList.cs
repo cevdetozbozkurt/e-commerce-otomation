@@ -97,10 +97,8 @@ namespace e_commere.src
                 linkLabels[i].TabIndex = 20;
                 linkLabels[i].LinkColor = Color.Black;
                 linkLabels[i].ActiveLinkColor = Color.Transparent;
-                //linkLabels[i].LinkArea = new Size(90, 50);
-                /*this.linkLabel1.Location = new System.Drawing.Point(34, 56);
-        this.linkLabel1.Size = new System.Drawing.Size(224, 16);
-        this.linkLabel1.AutoSize = true;*/
+
+               // linkLabels[i].LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(new object(),new System.Windows.Forms.LinkClickedEventArgs("www.google.com"));
                 linkLabels[i].Text = titles[i];
 
                 labels.Add(new System.Windows.Forms.Label());

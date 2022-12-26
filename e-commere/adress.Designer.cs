@@ -33,6 +33,8 @@
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pkText = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pkText = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.panel2.SuspendLayout();
@@ -116,6 +116,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(779, 558);
             this.panel2.TabIndex = 72;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(47, 262);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 20);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Posta Kodu ;";
+            // 
+            // pkText
+            // 
+            this.pkText.Location = new System.Drawing.Point(163, 256);
+            this.pkText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pkText.MaxLength = 5;
+            this.pkText.Name = "pkText";
+            this.pkText.Size = new System.Drawing.Size(148, 26);
+            this.pkText.TabIndex = 41;
             // 
             // label3
             // 
@@ -284,23 +302,6 @@
             this.button7.Text = "Profilim";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 262);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 20);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "Posta Kodu ;";
-            // 
-            // pkText
-            // 
-            this.pkText.Location = new System.Drawing.Point(163, 256);
-            this.pkText.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pkText.Name = "pkText";
-            this.pkText.Size = new System.Drawing.Size(148, 26);
-            this.pkText.TabIndex = 41;
             // 
             // adress
             // 

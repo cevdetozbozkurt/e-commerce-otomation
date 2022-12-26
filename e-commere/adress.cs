@@ -87,9 +87,11 @@ namespace e_commere
         {
             con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "update uyeaders set adressehir = '" + ilBox1.Text + "', adresilce = '" + ilceText.Text + "', AdresPK = '"+ pkText.Text +"', adresmetni = '"+ productComment.Text+ "' where uyeid = '" + Login.MemberId + "'";
+            cmd.CommandText = "update uyeadres set adressehir = '" + ilBox1.Text + "', adresilce = '" + ilceText.Text + "', AdresPK = '"+ pkText.Text +"', adresmetni = '"+ productComment.Text+ "' where uyeid = '" + Login.MemberId + "'";
             cmd.ExecuteNonQuery();
             con.Close();
+
+            MessageBox.Show("Adresiniz güncellendi", "Bilgilendirm", MessageBoxButtons.OK);
         }
     }
 }

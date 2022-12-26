@@ -131,12 +131,6 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Main\main.cs" />
-    <Compile Include="Stok.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Stok.Designer.cs">
-      <DependentUpon>Stok.cs</DependentUpon>
-    </Compile>
     <Compile Include="SubCategories.cs" />
     <Compile Include="src\UrunEkle.cs" />
     <Compile Include="urunSat.cs">

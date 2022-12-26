@@ -25,7 +25,9 @@ namespace e_commere
         SqlDataReader dr;
         SqlCommand cmd = new SqlCommand();
         string text;
+        string altkategori;
         string productCount;
+        string sayı;
         private void FirstPage_Load(object sender, EventArgs e)
         {
             Console.WriteLine(provider.subCategories);
@@ -48,11 +50,12 @@ namespace e_commere
             con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "select Kategori.kategoriid from altkategori inner join Kategori on Kategori.KategoriId = AltKategori.KategoriId where KategoriAdi = '" + cmbCategories.Text + "'";
+            cmd.CommandText = "select Kategori.kategoriid, altkategori.altkategoriid from altkategori inner join Kategori on Kategori.KategoriId = AltKategori.KategoriId where KategoriAdi = '" + cmbCategories.Text + "'";
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 text = dr[0].ToString();
+                altkategori = dr[1].ToString();
             }
             cmbSubCategories.DataSource = provider.FilterCategory(text);
             dr.Close();
@@ -100,7 +103,17 @@ namespace e_commere
 
         private void button9_Click(object sender, EventArgs e)
         {
-            
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "select count(*) from urun where kategoriid = '"+text+"' and altkategoriid = '" + altkategori+"'";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                sayı = dr[0].ToString();
+            }
+            dr.Close();
+            con.Close();
+            ProductList.CreatePanel(int.Parse(sayı), this);
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
