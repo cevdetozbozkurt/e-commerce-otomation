@@ -16,7 +16,7 @@ namespace e_commere
     public partial class Profile : Form
     {
 
-        SqlConnection con = new SqlConnection("Data Source = 4REEF\\SQLEXPRESS; Integrated Security = True; Connect Timeout = 30; Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
         SqlDataReader dr;
         SqlCommand cmd = new SqlCommand();
         public Profile()
@@ -29,7 +29,7 @@ namespace e_commere
             
             con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "select uyeadi,uyesoyadi,uyetelefon,uyeemail,uyesifre from uye where uyeId = '" + "1"/*int.Parse(Login.MemberId)*/ + "'";
+            cmd.CommandText = "select uyeadi,uyesoyadi,uyetelefon,uyeemail,uyesifre from uye where uyeId = '" + int.Parse(Login.MemberId) + "'";
            // Debug.WriteLine(int.Parse(Login.MemberId));
             dr = cmd.ExecuteReader();
             while (dr.Read())

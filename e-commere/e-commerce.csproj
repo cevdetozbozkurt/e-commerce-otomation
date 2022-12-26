@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="urunVeYorum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="urunVeYorum.Designer.cs">
+      <DependentUpon>urunVeYorum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ürünlerim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataView.resx">
       <DependentUpon>DataView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urunVeYorum.resx">
+      <DependentUpon>urunVeYorum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ürünlerim.resx">
       <DependentUpon>Ürünlerim.cs</DependentUpon>

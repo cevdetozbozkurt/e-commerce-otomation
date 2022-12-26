@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,10 @@ namespace e_commere
         {
             InitializeComponent();
         }
+
+        SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
+        SqlDataReader dr;
+        SqlCommand cmd = new SqlCommand();
 
         private void pictureBox20_Click(object sender, EventArgs e)
         {
@@ -76,6 +81,15 @@ namespace e_commere
             urunSat sat = new urunSat();
             this.Hide();
             sat.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "update uyeaders set adressehir = '" + ilBox1.Text + "', adresilce = '" + ilceText.Text + "', AdresPK = '"+ pkText.Text +"', adresmetni = '"+ productComment.Text+ "' where uyeid = '" + Login.MemberId + "'";
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

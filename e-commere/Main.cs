@@ -23,11 +23,23 @@ namespace e_commere
         CategoryProvider provider = new CategoryProvider();
         SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
         SqlDataReader dr;
+        SqlCommand cmd = new SqlCommand();
         string text;
+        string productCount;
         private void Main_Load(object sender, EventArgs e)
         {
             cmbCategories.DataSource = provider.FillCombobox();
-            //ImageProvider.GetImage(pictureBox1);
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "select count(*) from urun";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                productCount = dr[0].ToString();
+            }
+            ProductList.CreatePanel(int.Parse(productCount),this);
+            dr.Close();
+            con.Close();            
         }
 
         private void loginButton_Click(object sender, EventArgs e)

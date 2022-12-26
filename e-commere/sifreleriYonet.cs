@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -81,6 +82,42 @@ namespace e_commere
             urunSat sat = new urunSat();
             this.Hide();
             sat.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string password = "";
+            SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "select uyesifre from uye where uyeid = '" + Login.MemberId + "'";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                password = dr[0].ToString();
+            }
+            dr.Close();
+            
+
+            if (!memberPass.Text.Equals(password))
+            {
+                MessageBox.Show("Eski şifreniz yanlış", "hata", MessageBoxButtons.OK);
+            }else if(!newPass.Text.Equals(newPass2.Text) || !newPass2.Text.Equals(newPass.Text))
+            {
+                MessageBox.Show("Girdiğiniz şifreler uyuşmuyor", "hata", MessageBoxButtons.OK);
+            }else if (newPass.Text.Equals(password) || newPass2.Text.Equals(password))
+            {
+                MessageBox.Show("Yeni şifreniz eskisi ile aynı olamaz", "hata", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("Şifreniz değiştirildi", "Başarı", MessageBoxButtons.OK);
+                cmd.CommandText = "update Uye set uyesifre = '"+ newPass.Text +"' where AltKategoriId = '" + Login.MemberId + "'";
+                cmd.ExecuteNonQuery();
+            }
+            con.Close();
         }
     }
 }

@@ -42,3 +42,26 @@ C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug
 C:\Users\eren2\OneDrive\Belgeler\GitHub\e-commerce-otomation\e-commere\obj\Debug\e_commere.DenemeFrorm.resources
 D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.Ürünlerim.resources
 D:\github projects\e-commerce-otomation\e-commere\obj\Debug\e_commere.urunSat.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\bin\Debug\e-commere.exe.config
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\bin\Debug\e-commere.exe
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\bin\Debug\e-commere.pdb
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e-commerce.csproj.AssemblyReference.cache
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e-commerce.csproj.SuggestedBindingRedirects.cache
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.adress.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.DataView.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.Ürünlerim.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.FirstPage.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.hesapSilme.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.Login.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.Main.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.Profile.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.Properties.Resources.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.Register.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.sifreleriYonet.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.siparisler.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.urunSat.resources
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e-commerce.csproj.GenerateResource.cache
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e-commerce.csproj.CoreCompileInputs.cache
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e-commere.exe
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e-commere.pdb
+C:\Users\eren2\OneDrive\Belgeler\GitHub\github\e-commerce-otomation\e-commere\obj\Debug\e_commere.urunVeYorum.resources

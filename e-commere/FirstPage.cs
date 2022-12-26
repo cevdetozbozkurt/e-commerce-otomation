@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using e_commere.src;
 
 namespace e_commere
 {
@@ -22,11 +23,24 @@ namespace e_commere
         CategoryProvider provider = new CategoryProvider();
         SqlConnection con = new SqlConnection("Data Source=EREN\\ROOT;Initial Catalog=E-ticaret;Integrated Security=True");
         SqlDataReader dr;
+        SqlCommand cmd = new SqlCommand();
         string text;
+        string productCount;
         private void FirstPage_Load(object sender, EventArgs e)
         {
             Console.WriteLine(provider.subCategories);
             cmbCategories.DataSource = provider.FillCombobox();
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "select count(*) from urun";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                productCount = dr[0].ToString();
+            }
+            ProductList.CreatePanel(int.Parse(productCount), this);
+            dr.Close();
+            con.Close();
         }
 
         private void cmbCategories_SelectedIndexChanged(object sender, EventArgs e)
@@ -91,50 +105,42 @@ namespace e_commere
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            urunVeYorum uvy = new urunVeYorum();
-            uvy.Show();
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            urunVeYorum uvy = new urunVeYorum();
-            uvy.Show();
+            
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
-            urunVeYorum uvy = new urunVeYorum();
-            uvy.Show();
+           
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
-            urunVeYorum uvy = new urunVeYorum();
-            uvy.Show();
+            
         }
 
         private void panel8_Paint(object sender, PaintEventArgs e)
         {
-            urunVeYorum uvy = new urunVeYorum();
-            uvy.Show();
+            
         }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
-            urunVeYorum uvy = new urunVeYorum();
-            uvy.Show();
+
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
-            urunVeYorum uvy = new urunVeYorum();
-            uvy.Show();
+            
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
-            urunVeYorum uvy = new urunVeYorum();
-            uvy.Show();
+            
         }
     }
 }
